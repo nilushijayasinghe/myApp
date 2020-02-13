@@ -12,15 +12,12 @@ pipeline {
 
             stage('Testing stage'){
                 steps {
-                    withMaven(maven : 'maven 3_6_3'){
-                                    sh 'mvn test'
+                     sh 'mvn test'
                     }
                 }
-            }
 
             stage ('Deployment stage'){
                 steps{
-                withMaven(maven : 'maven 3_6_3'){
                     sh 'mvn deploy'
                     }
                 }
@@ -28,5 +25,3 @@ pipeline {
             }
 
          }
-
-    }
